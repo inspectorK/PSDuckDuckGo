@@ -1,16 +1,4 @@
-﻿# ***********************************************************************
-# * DISCLAIMER: 
-# * All sample code is provided by OSIsoft for illustrative purposes only.
-# * These examples have not been thoroughly tested under all conditions.
-# * OSIsoft provides no guarantee nor implies any reliability, 
-# * serviceability, or function of these programs.
-# * ALL PROGRAMS CONTAINED HEREIN ARE PROVIDED TO YOU "AS IS" 
-# * WITHOUT ANY WARRANTIES OF ANY KIND. ALL WARRANTIES INCLUDING 
-# * THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY
-# * AND FITNESS FOR A PARTICULAR PURPOSE ARE EXPRESSLY DISCLAIMED.
-# ************************************************************************
-
-<#
+﻿<#
 .SYNOPSIS
 Invokes the DuckDuckGo Instant Answer API
 
