@@ -144,15 +144,4 @@ else
     $DDGInstantAnswer.AbstractText = $Result.AbstractText
 }
 
-<#
-# If we didn't skip, but got a Disambiguation result, try again and skip Disambiguation this time
-if (!$SkipDisambiguation -and $Result.Type -eq "D")
-{
-    $DDGAPI_URIBody.skip_disambig = "1"
-    $Result = Invoke-RestMethod -Method Get -Uri $DDGAPI_URIRoot -Body $DDGAPI_URIBody -ErrorAction Stop
-}
-
-
-#>
-
 return $DDGInstantAnswer
