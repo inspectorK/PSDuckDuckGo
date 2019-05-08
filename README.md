@@ -8,6 +8,10 @@ Download the script and run:
 
 to see full help, usage, and examples.
 
+It is also recommended to use New-Alias to alias `.\Invoke-DuckDuckGoInstantAnswer` to something shorter, i.e. `ddg`.</br></br>
+Add the following line to your PowerShell profile to create the alias</br>
+`New-Alias ddg <PathToDownloadLocation>\Invoke-DuckDuckGoInstantAnswer.ps1`
+
 ## Return Objects
 
 Note that not all feilds exposed via the API are captured within the return object.
