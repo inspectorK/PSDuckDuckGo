@@ -8,6 +8,9 @@ Invokes a GET rest method to get instant answer results for a given query.  For 
 .PARAMETER Query
 The search term to query
 
+.PARAMETER OpenSourceInDefaultBrowser
+The resulting source page will be opened in the default browser
+
 .PARAMETER NoRedirect
 Skip HTTP redirects (for !bang commands)
 
@@ -38,18 +41,23 @@ param(
     [string]
     $Query,
 
-    [Alias('nr')]
+    [Alias('o')]
     [Parameter(Mandatory=$false,Position=1)]
+    [switch]
+    $OpenSourceInDefaultBrowser,
+
+    [Alias('nr')]
+    [Parameter(Mandatory=$false,Position=2)]
     [switch]
     $NoRedirect,
 
     [Alias('nh')]
-    [Parameter(Mandatory=$false,Position=2)]
+    [Parameter(Mandatory=$false,Position=3)]
     [switch]
     $NoHTML,
 
     [Alias('sd')]
-    [Parameter(Mandatory=$false,Position=3)]
+    [Parameter(Mandatory=$false,Position=4)]
     [switch]
     $SkipDisambiguation
 )
@@ -130,6 +138,11 @@ if ($Result.Type -eq "D" -and !$SkipDisambiguation)
         # TODO some disambig topics also contain "Other uses" and "see also" results, need to handle these as well
         $ErrorActionPreference = "Continue"
     }
+
+    if ($OpenSourceInDefaultBrowser)
+    {
+        Start-Process $DDGInstantAnswer.DisambigSourceURL
+    }
 }
 
 else
@@ -142,6 +155,11 @@ else
     $DDGInstantAnswer.AbstractSource = $Result.AbstractSource
     $DDGInstantAnswer.AbstractImageURL = $Result.Image
     $DDGInstantAnswer.AbstractText = $Result.AbstractText
+
+    if ($OpenSourceInDefaultBrowser)
+    {
+        Start-Process $DDGInstantAnswer.AbstractSourceURL
+    }
 }
 
 return $DDGInstantAnswer
