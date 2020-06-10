@@ -2,6 +2,8 @@
 
 Invoke-DuckDuckGoInstantAnswer is a lightweight and simple PowerShell script cmdlet that can be used to request responses from DuckDuckGo's [Instant Answer API](https://duckduckgo.com/api).
 
+![PSDuckDuckGo](images/PSDuckDuckGo.gif)
+
 Download the script and run:
 
 `Get-Help .\Invoke-DuckDuckGoInstantAnswer.ps1 -Full` 
