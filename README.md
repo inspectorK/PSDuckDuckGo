@@ -16,7 +16,7 @@ Add the following line to your PowerShell profile to create the alias</br>
 
 ## Return Objects
 
-Note that not all feilds exposed via the API are captured within the return object.
+Note that not all fields exposed via the API are captured within the return object.
 
 If the query term results in an "Abstract" type response, a `DDGInstantAnswerAbstractResult` object is returned containing the following data members:
 
